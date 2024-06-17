@@ -31,20 +31,229 @@
       --font-weight-heavy: 800;
       --font-style: normal;
     }
+
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--yellow);
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .blog-card-container {
+      display: flex;
+      flex-direction: column;
+      height: 33rem;
+      width: 24rem;
+      background-color: var(--white);
+      border: 1px solid var(--black);
+      border-radius: 20px;
+      box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 1);
+      padding: 1.5rem;
+      transition: 0.1s box-shadow ease-in-out;
+    }
+
+    .blog-card-container h1 {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+      height: 2rem;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      font-family: var(--font-family);
+      font-style: var(--font-style);
+      font-weight: var(--font-weight-heavy);
+      color: var(--black);
+      transition: 0.1s color ease-in-out;
+    }
+
+    .blog-card-container:hover {
+      cursor: pointer;
+      box-shadow: 18px 18px 0px 0px rgba(0, 0, 0, 1);
+      transition: 0.1s box-shadow ease-in-out;
+    }
+
+    .blog-card-container:hover h1 {
+      color: var(--yellow);
+      transition: 0.1s color ease-in-out;
+    }
+
+    .blog-card-container:hover {
+      box-shadow: 18px 18px 0px 0px rgba(0, 0, 0, 1);
+      transition: 0.1s box-shadow ease-in-out;
+    }
+
+    .blog-card-container:focus h1 {
+      color: var(--yellow);
+      transition: 0.1s color ease-in-out;
+    }
+
+    .blog-card-header-graphic {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: auto;
+    }
+
+    .blog-card-header-graphic img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .blog-category {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      width: fit-content;
+      height: fit-content;
+      padding: 0.5rem 1rem;
+      margin: 2rem 0 0 0;
+      border-radius: 5px;
+      background-color: var(--yellow);
+      font-size: 1rem;
+      color: var(--black);
+      text-align: center;
+      font-family: var(--font-family);
+      font-style: var(--font-style);
+      font-weight: var(--font-weight-heavy);
+    }
+
+    .blog-publish-date {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      height: 3rem;
+      width: 100%;
+      font-size: 1rem;
+      color: var(--black);
+      text-align: left;
+      font-family: var(--font-family);
+      font-style: var(--font-style);
+      font-weight: var(--font-weight-normal);
+    }
+
+    .blog-description {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      height: auto;
+      font-size: var(--body-copy);
+      color: var(--grey);
+      text-align: left;
+      font-family: var(--font-family);
+      font-style: var(--font-style);
+      font-weight: var(--font-weight-normal);
+    }
+
+    .blog-author {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+      height: auto;
+      font-size: var(--body-copy);
+      color: var(--black);
+      text-align: left;
+      font-family: var(--font-family);
+      font-style: var(--font-style);
+      font-weight: var(--font-weight-heavy);
+      margin-top: auto;
+    }
+
+    .blog-author img {
+      width: 2rem;
+      height: 2rem;
+      margin-right: 0.75rem;
+    }
+
+    @media screen and (max-width: 24rem) {
+
+      .blog-card-container {
+        height: 29rem;
+        width: 20rem;
+        padding: 1.25rem;
+      }
+
+      .blog-card-container h1 {
+        height: 1.75rem;
+        margin-bottom: 1rem;
+        font-size: 1.25rem;
+      }
+
+      .blog-card-header-graphic {
+        height: 18rem;
+      }
+
+      .blog-card-header-graphic img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+
+      .blog-category {
+        padding: 0.5rem 1rem;
+        margin: 1.5rem 0 0.5rem 0;
+        border-radius: 5px;
+        font-size: 0.75rem;
+      }
+
+      .blog-publish-date {
+        font-size: 0.75rem;
+        font-weight: var(--font-weight-heavy);
+      }
+
+      .blog-description {
+        font-size: 14px;
+        margin-bottom: 1.5rem;
+      }
+
+      .blog-author {
+        font-size: 14px;
+      }
+
+    }
   </style>
 </head>
 
 <body>
-
-  Learning
-
-  Published 21 Dec 2023
-
-  HTML &amp; CSS foundations
-
-  These languages are the backbone of every website, defining structure, content, and presentation.
-
-  Greg Hooper
+  <main class="blog-card-container" role="Blog Card">
+    <div class="blog-card-header-graphic" role="Blog Card Header Image">
+      <img alt="HTML &amp; CSS Blog Card Header Illustration" src="assets\images\illustration-article.svg"
+        role="Article Illustration Image">
+    </div>
+    <div class="blog-category" role="Blog Category Label">
+      Learning
+    </div>
+    <div class="blog-publish-date" role="Blog Publish Date">
+      Published 21 Dec 2023
+    </div>
+    <h1 role="Blog Title">HTML &amp; CSS foundations</h1>
+    <div class="blog-description" role="Blog Description">
+      These languages are the backbone of every website, defining structure, content, and presentation.
+    </div>
+    <div class="blog-author" role="Blog Author Information &amp; Photo">
+      <img alt="Greg Hooper's Profile Photo" src="assets\images\image-avatar.webp" role="Blog Author Photo">
+      Greg Hooper
+    </div>
+    </main>
 </body>
 
 </html>
